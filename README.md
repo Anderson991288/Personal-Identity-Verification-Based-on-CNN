@@ -98,7 +98,8 @@ accuracy = sum(Name == imdsTest.Labels)/numel(imdsTest.Labels);
 
 ![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/fd3a03c8-dbf4-4ff4-9d40-06fe88becb1a)
 
-* 盲切割的結果 
+
+盲切割的結果 
 ![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/ec4b773b-97c7-4660-b4ce-994993a993a5)
 
 
