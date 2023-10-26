@@ -93,7 +93,10 @@ accuracy = sum(Name == imdsTest.Labels)/numel(imdsTest.Labels);
 
 ## 結果 : 
 
-![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/fd6b81e9-a0de-4e87-9424-d2eafa6a0876)
+![L900 Resnet50 B32 train](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/2ba42603-ba6a-4ab3-813e-96934c8591d1)
+
+
+![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/fd3a03c8-dbf4-4ff4-9d40-06fe88becb1a)
 
 
 
