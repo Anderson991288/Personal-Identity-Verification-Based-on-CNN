@@ -99,7 +99,9 @@ accuracy = sum(Name == imdsTest.Labels)/numel(imdsTest.Labels);
 ![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/fd3a03c8-dbf4-4ff4-9d40-06fe88becb1a)
 
 
+## Reference Paper :
 
+[1] Jia Wu, Chao Liu, Qiyu Long, Weiyan Hou, “Research on Personal Identity Verification Based on Convolutional Neural Network,” 2019 IEEE 2nd International Conference on Information and Computer Technologies.
 
 
 
