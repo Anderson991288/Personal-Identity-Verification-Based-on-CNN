@@ -1,6 +1,6 @@
 # Personal-Identity-Verification-Based-on-CNN
 ## 原始資料 : 
-* 原始資料 : PTB_1_II.csv、PTB_2_II.csv
+* 原始資料(對齊切割) : PTB_1_II.csv、PTB_2_II.csv(
 
   
 * 兩個Excel表 :  一個用來training，一個用來testing 
