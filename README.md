@@ -93,14 +93,17 @@ accuracy = sum(Name == imdsTest.Labels)/numel(imdsTest.Labels);
 
 ## 結果 : 
 
-![L900 Resnet50 B32 train](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/2ba42603-ba6a-4ab3-813e-96934c8591d1)
+![L900 Resnet50 B32 train](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/2ed44fa8-c4b2-4f4d-999f-0f2529799015)
 
 
-![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/fd3a03c8-dbf4-4ff4-9d40-06fe88becb1a)
+![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/6cb87428-fe22-4735-ad84-dd3096932200)
+
 
 
 盲切割的結果 
-![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/ec4b773b-97c7-4660-b4ce-994993a993a5)
+
+
+![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/b947d295-9a42-471b-bcee-4e638c3ac11f)
 
 
 ## Reference Paper :
