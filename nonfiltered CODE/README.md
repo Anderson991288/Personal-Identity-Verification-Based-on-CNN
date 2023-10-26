@@ -1,6 +1,6 @@
 ## 盲切割
 
-### 直接讀取.mat file，一樣方法轉灰階圖
+### 1.直接讀取.mat file，一樣方法轉灰階圖
 
 ```
 img_size = 30;  % Change "size" to "img_size"
@@ -76,3 +76,4 @@ for i = 1:13
 end
 ```
 
+### 2.後面步驟相同!
