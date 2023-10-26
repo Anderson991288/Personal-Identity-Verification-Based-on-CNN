@@ -12,10 +12,6 @@
   
 1. 先讀取Excel，做標準化與調整灰階圖大小，再轉灰階圖
 ```
-clear;
-clc;
-close all;
-
 filename = 'D:\111專題\gray scale\112-1\PTB_1_II.csv';
 filename1 = 'D:\111專題\gray scale\112-1\PTB_2_II.csv';
 
@@ -44,3 +40,63 @@ for i = 1:13
     end
 end
 ```
+
+2. 預處理:讀取專換好的灰階圖，把data分類training,val
+
+```
+% 抓data
+imagepath = fullfile('data train');
+imds = imageDatastore(imagepath, 'IncludeSubfolders',true, 'LabelSource','folderNames');
+
+% 選擇網路
+net = ResNet50;
+% get InputSize
+try
+   inputSize = net(1).InputSize; 
+catch
+   inputSize = net.Layers(1).InputSize; 
+end
+
+% 調整影像大小
+imds.ReadFcn = @(loc)imresize(imread(loc),inputSize(1:2)); 
+
+% 把data分類training,val
+[trainDS,valDS] = splitEachLabel(imds,0.8,0.2, 'randomized');
+```
+
+3.開始 training，調整參數以獲得最好的id辨識度
+
+```
+ net =ResNet50;
+
+ opts = trainingOptions('sgdm',...
+         'MiniBatchSize',128,...
+         'MaxEpochs',20, ...
+         'Shuffle','every-epoch', ...
+         'InitialLearnRate',0.001,...
+         'ValidationData',valDS,...
+         "Plots",'training-progress',...
+         'ValidationPatience', 3, 'ExecutionEnvironment','gpu');
+
+         modified_net_10mins = trainNetwork(trainDS2, net, opts);
+```
+
+4.testing，測試此模型的好壞
+
+```
+testimagepath = fullfile('data test900');
+imdsTest = imageDatastore(testimagepath, 'IncludeSubfolders',true, 'LabelSource','folderNames');
+imdsTest.ReadFcn = @(loc)imresize(imread(loc),inputSize(1:2));
+[Name,probs] = classify(modified_net_10mins,imdsTest);
+accuracy = sum(Name == imdsTest.Labels)/numel(imdsTest.Labels);
+```
+
+## 結果 : 
+
+![image](https://github.com/Anderson991288/Personal-Identity-Verification-Based-on-CNN/assets/68816726/fd6b81e9-a0de-4e87-9424-d2eafa6a0876)
+
+
+
+
+
+
