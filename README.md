@@ -1,1 +1,46 @@
 # Personal-Identity-Verification-Based-on-CNN
+## 原始資料 : 
+* 原始資料 : PTB_1_II.csv、PTB_2_II.csv
+
+  
+* 兩個Excel表 :  一個用來training，一個用來testing 
+* Excel表中，有1000欄，取樣頻率為 1000Hz
+* 最後一欄為我們要辨識的 Label，有1~13來代表不同人
+
+## Code(簡化版Code，完整版在上方) : 
+
+  
+1. 先讀取Excel，做標準化與調整灰階圖大小，再轉灰階圖
+```
+clear;
+clc;
+close all;
+
+filename = 'D:\111專題\gray scale\112-1\PTB_1_II.csv';
+filename1 = 'D:\111專題\gray scale\112-1\PTB_2_II.csv';
+
+aa = csvread(filename);
+bb = csvread(filename1);
+
+a=[125 108 105 143 126 127 106 106 114 144 144 95 132];
+b=[0 125 233 338 481 607 734 840 946 1060 1204 1348 1443];
+
+a1=[127 108 106 121 134 114 111 108 117 112 144 85 142];
+b1=[0 127 235 341 462 596 710 821 929 1046 1158 1302 1387];
+
+L = 400;
+l  = sqrt(L);
+
+for i = 1:13
+    for j = 1:a(i)
+        xx1(1:1000) =aa((b(i)+j), 1:1000);
+            standard_x = 255*(xx1-min(xx1))/(max(xx1)-min(xx1));
+            s_x1 = reshape(standard_x(1,1:L),l,l);
+            imagesc(s_x1);
+            colormap(gray);           
+            set(gca,'xtick',[],'xticklabel',[]);
+            set(gca,'ytick',[],'yticklabel',[]);
+       saveas(gcf, ['D:\111專題\gray scale\112-1\CODE\data train','\',num2str(i),'\',num2str(j),'.jpg']);   
+    end
+end
+```
