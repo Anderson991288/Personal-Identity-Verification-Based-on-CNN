@@ -41,7 +41,7 @@ for i = 1:13
 end
 ```
 
-2. 預處理:讀取專換好的灰階圖，把data分類training,val
+2. 預處理:讀轉換好的灰階圖，把data分類training,val
 
 ```
 % 抓data
